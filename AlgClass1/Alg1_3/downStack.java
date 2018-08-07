@@ -1,6 +1,8 @@
 package AlgClass1.Alg1_3;
 
 
+import edu.princeton.cs.algs4.Stack;
+
 import java.util.Iterator;
 
 /**
@@ -22,22 +24,42 @@ public class downStack<Item> implements Iterable<Item>{
         return N;
     }
 
-    public void push(Item o){
+    public void push(Item item){
         //向栈顶添加元素
         Node oldfirst = first;
         first = new Node();
-        first.item = o;
+        first.item = item;
         first.next = oldfirst;
         N++;
     }
 
-    public Object pop(){
+    public Item pop(){
         //从栈顶删除元素
-        Item o = first.item;
+        Item item = first.item;
         first = first.next;
         N--;
-        return o;
+        return item;
     }
+
+    public Stack<Item> copy(Stack<Item> s){
+        Iterator<Item> it = s.iterator();
+        Stack<Item> result = new Stack<Item>();
+        Stack<Item> temp = new Stack<Item>();
+        while (it.hasNext()) {
+            temp.push(it.next());
+        }
+        it = temp.iterator();
+        while (it.hasNext()) {
+            result.push(it.next());
+        }
+        return result;
+
+    }
+
+    public Item peek(){
+        return first.item;
+    }
+
     @Override
     public Iterator<Item> iterator() {
         return new ListIterator();
