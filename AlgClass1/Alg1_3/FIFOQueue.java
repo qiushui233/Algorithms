@@ -16,7 +16,9 @@ public class FIFOQueue<Item> implements Iterable<Item>{
     }
 
     public boolean isEmpty() { return first == null; }
-    private int size() {return N;}
+
+    public int size() {return N;}
+
     public void enqueue(Item item){
         //向表尾添加元素
         Node oldlast = last;
@@ -36,6 +38,8 @@ public class FIFOQueue<Item> implements Iterable<Item>{
         N--;
         return item;
     }
+
+
     @Override
     public Iterator<Item> iterator() {
         return new ListIterator();
