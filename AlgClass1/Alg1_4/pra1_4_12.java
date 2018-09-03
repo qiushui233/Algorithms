@@ -15,8 +15,6 @@ public class pra1_4_12 {
 
     public static void print(int[] a,int[] b){
 
-
-
         if (a.length > b.length){
 
             for (int i = 0; i < b.length; i++) {
@@ -28,6 +26,7 @@ public class pra1_4_12 {
                     }
                 }
             }
+
 
         }else{
 

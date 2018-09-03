@@ -18,11 +18,14 @@ public class pra1_4_8 {
     public static int count2(int[] nums){
         int count = 0;
 
+
         Arrays.sort(nums);
 
         for (int i = 0; i < nums.length-1; i++) {
             if (nums[i+1] - nums[i] == 0) count++;
         }
+
+
 
         return count;
     }
@@ -31,11 +34,13 @@ public class pra1_4_8 {
 
         int count = 0;
 
+
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] == nums[j])  count++;
             }
         }
+
 
         return count;
     }
